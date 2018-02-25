@@ -1,276 +1,281 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Testplate</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
-	<link rel="stylesheet" href="/css/alertify.css">
-	<script
-		src="https://code.jquery.com/jquery-3.1.1.min.js"
-		integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-		crossorigin="anonymous">
-	</script>
-	<style>
-		.app.testframe .buy,
-		.app.testframe .sell {
-			text-align: center;
-		}
+    <meta charset="UTF-8">
+    <title>Testplate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
+    <link rel="stylesheet" href="/css/alertify.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous">
+    </script>
+    <style>
+        .app.testframe .buy,
+        .app.testframe .sell {
+            text-align: center;
+        }
 
-		.app.testframe .buy input,
-		.app.testframe .sell input {
-			text-align: center;
-			font-size:25px;
-		}
+            .app.testframe .buy input,
+            .app.testframe .sell input {
+                text-align: center;
+                font-size: 25px;
+            }
 
-		.no-padding {
-			padding-top: 0 !important;
-			padding-bottom: 0 !important;
-		}
+        .no-padding {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
 
-		.approx {
-			font-size: 22px;
-		    font-style: italic;
-		    color: #949494;
-		}
+        .approx {
+            font-size: 22px;
+            font-style: italic;
+            color: #949494;
+        }
 
-		.app.interface {
-			
-		}
+        .app.interface {
+        }
 
-		.app.interface.loaded {
-			display: initial;
-		}
+            .app.interface.loaded {
+                display: initial;
+            }
 
-		.app.stats.bubble span {
-			display: block;
-		}
-		.app.stats.bubble span.count {
-			margin-top: 12px;
-			font-size: 32px;
-			font-style: italic;
-		}
-		.app.stats.bubble span.identifier {
-			font-size: 20px;
-			font-weight: bold;
-		}
-		.app.stats.bubble span.identifier .soft {
-			font-weight: 300;
-			font-size: 15px;
-		}
-		.app.stats.bubble span.converted {
-			margin-top: 10px;
-		}
-		.app.stats.textual {
-			text-align: center;
-		}
-		.app.stats.textual span {
-			display: block;
-			font-size: 18px;
-			margin-bottom: 15px;
-		}
-		.app.stats.textual span img {
-			background: #eadfdf;
-			padding: 5px;
-			margin: 0 auto;
-			width: 60px;
-		}
-		.actions .button {
-			margin-bottom: 15px;
-			width: 100%;
-		}
+        .app.stats.bubble span {
+            display: block;
+        }
 
+            .app.stats.bubble span.count {
+                margin-top: 12px;
+                font-size: 32px;
+                font-style: italic;
+            }
 
-	</style>
+            .app.stats.bubble span.identifier {
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+                .app.stats.bubble span.identifier .soft {
+                    font-weight: 300;
+                    font-size: 15px;
+                }
+
+            .app.stats.bubble span.converted {
+                margin-top: 10px;
+            }
+
+        .app.stats.textual {
+            text-align: center;
+        }
+
+            .app.stats.textual span {
+                display: block;
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+
+                .app.stats.textual span img {
+                    background: #eadfdf;
+                    padding: 5px;
+                    margin: 0 auto;
+                    width: 60px;
+                }
+
+        .actions .button {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-	<ui class="ui centered grid container intro" style="margin-top:50px;">
-		<div class="row">
-			<div class="column" style="text-align: center;">
-			<h2 class="ui header">
-			  <a href="https://discord.gg/ntFeRGn">POWH3D</a>
-			  <div class="sub header">This is the public testnet. Make sure to change your metamask provider to Ropsten. <br><br> <a href="https://discord.gg/ntFeRGn"><span style="font-size:20px; font-style:italic;">Join the Discord.</span></a></div>
-			</h2>
-			</div>
-		</div>
-	</ui>
-<!-- 	<div class="ui grid container app loader">
-		<div class="column">
-			<h1 class="ui header">
-				Loading...
-			</h1>
-		</div>
-	</div> -->
-	<div class="ui grid container app interface">
-		<div class="column">
-			<div class="ui raised segment">
-				<div class="ui grid app testframe">
-					<div class="two column row divided">
-						<div class="column buy">
-							<h2 class="ui aligned icon header">
-							  <i class="circular inverted teal shopping basket icon"></i>
-							  BUY
-							</h2>
-							<p>Input unit measurement is in Ethereum.</p>
-							<div class="ui divider"></div>
-							<div class="ui centered grid">
-								<div class="row">
-									<div class="six wide column">
-										<form class="ui form">
-											<div class="field">
-												<input type="text"  placeholder="0.05">
-											</div>
-										</form>
-									</div>
-								</div>
-								<div class="row no-padding">
-									<div class="column" style="text-align: center;">
-										<span class="approx">Type in a number..</span>
-									</div>
-								</div>
-								<div class="row">
-									<div class="six wide column">
-										<button class="ui right labeled massive icon button">
-											<i class="right arrow icon"></i>
-											Buy
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="column sell">
-							<h2 class="ui aligned icon header">
-							  <i class="circular inverted green money icon"></i>
-							  SELL
-							</h2>
-							<p>Input unit measurement is in Tokens.</p>
-							<div class="ui divider"></div>
-							<div class="ui centered grid">
-								<div class="row">
-									<div class="six wide column">
-										<form class="ui form">
-											<div class="field">
-												<input type="text"  placeholder="25">
-											</div>
-										</form>
-									</div>
-								</div>
-								<div class="row no-padding">
-									<div class="column" style="text-align: center;">
-										<span class="approx">Type in a number..</span>
-									</div>
-								</div>
-								<div class="row">
-									<div class="six wide column">
-										<button class="ui right labeled massive icon button">
-											<i class="right arrow icon"></i>
-											Sell
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="ui divider"></div>
-				<div class="ui grid">
-					<div class="row">
-						<div class="column" style="text-align: center;">
-							<h2 class="ui header">
-								HOLDINGS
-							</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="column">
-							<div class="ui internally celled grid">
-								<div class="three column row">
-									<div class="column">
-										<div class="ui grid">
-											<div class="row no-padding">
-												<div class="column" style="text-align: center;">
-													<h2 class="ui header">
-														Global
-													</h2>
-												</div>
-											</div>
-										    <div class="row">
-										    	<div class="column app stats textual">
+    <ui class="ui centered grid container intro" style="margin-top:50px;">
+        <div class="row">
+            <div class="column" style="text-align: center;">
+                <h2 class="ui header">
+                    <a href="https://discord.gg/ntFeRGn">POWH3D</a>
+                    <div class="sub header">This is the public testnet. Make sure to change your metamask provider to Ropsten. <br><br> <a href="https://discord.gg/ntFeRGn"><span style="font-size:20px; font-style:italic;">Join the Discord.</span></a></div>
+                </h2>
+            </div>
+        </div>
+    </ui>
+    <!-- 	<div class="ui grid container app loader">
+            <div class="column">
+                <h1 class="ui header">
+                    Loading...
+                </h1>
+            </div>
+        </div> -->
+    <div class="ui grid container app interface">
+        <div class="column">
+            <div class="ui raised segment">
+                <div class="ui grid app testframe">
+                    <div class="two column row divided">
+                        <div class="column buy">
+                            <h2 class="ui aligned icon header">
+                                <i class="circular inverted teal shopping basket icon"></i>
+                                BUY
+                            </h2>
+                            <p>Input unit measurement is in Ethereum.</p>
+                            <div class="ui divider"></div>
+                            <div class="ui centered grid">
+                                <div class="row">
+                                    <div class="six wide column">
+                                        <form class="ui form">
+                                            <div class="field">
+                                                <input type="text" placeholder="0.05">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="row no-padding">
+                                    <div class="column" style="text-align: center;">
+                                        <span class="approx">Type in a number..</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="six wide column">
+                                        <button class="ui right labeled massive icon button">
+                                            <i class="right arrow icon"></i>
+                                            Buy
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column sell">
+                            <h2 class="ui aligned icon header">
+                                <i class="circular inverted green money icon"></i>
+                                SELL
+                            </h2>
+                            <p>Input unit measurement is in Tokens.</p>
+                            <div class="ui divider"></div>
+                            <div class="ui centered grid">
+                                <div class="row">
+                                    <div class="six wide column">
+                                        <form class="ui form">
+                                            <div class="field">
+                                                <input type="text" placeholder="25">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="row no-padding">
+                                    <div class="column" style="text-align: center;">
+                                        <span class="approx">Type in a number..</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="six wide column">
+                                        <button class="ui right labeled massive icon button">
+                                            <i class="right arrow icon"></i>
+                                            Sell
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui divider"></div>
+                <div class="ui grid">
+                    <div class="row">
+                        <div class="column" style="text-align: center;">
+                            <h2 class="ui header">
+                                HOLDINGS
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <div class="ui internally celled grid">
+                                <div class="three column row">
+                                    <div class="column">
+                                        <div class="ui grid">
+                                            <div class="row no-padding">
+                                                <div class="column" style="text-align: center;">
+                                                    <h2 class="ui header">
+                                                        Global
+                                                    </h2>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="column app stats textual">
 
-													<span class="eth">
-														<img class="ui medium circular image" src="https://i.imgur.com/pTht7qE.png">
-														<b id="ethInContract">- ethereum</b> in contract.
-													</span>
-													<span class="tokens">
-														<img class="ui medium circular image" src="https://media.discordapp.net/attachments/401301420575293440/415274787578052618/PowH_Logo_V2_Glow_Final_Concept_invert.png?width=522&height=576">
-														<b id="tokensInCirculation">- tokens</b> in circulation.
-													</span>
-											    </div>
-										    </div>
-										</div>
-									</div>
-								    <div class="column">
-								    	<div class="ui grid">
-											<div class="row no-padding">
-												<div class="column" style="text-align: center;">
-													<h2 class="ui header">
-														Wallet
-													</h2>
-												</div>
-											</div>
-										    <div class="row">
-										    	<div class="column eight wide app stats bubble" id="myTokens">
-													<div class="ui circular segment">
-														<span class="identifier">Tokens <span class="soft">(P3D)</span></span>
-														<span class="count">-</span>
-														<span class="converted">(-USDT)</span>
+                                                    <span class="eth">
+                                                        <img class="ui medium circular image" src="https://i.imgur.com/pTht7qE.png">
+                                                        <b id="ethInContract">- ethereum</b> in contract.
+                                                    </span>
+                                                    <span class="tokens">
+                                                        <img class="ui medium circular image" src="https://media.discordapp.net/attachments/401301420575293440/415274787578052618/PowH_Logo_V2_Glow_Final_Concept_invert.png?width=522&height=576">
+                                                        <b id="tokensInCirculation">- tokens</b> in circulation.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div class="ui grid">
+                                            <div class="row no-padding">
+                                                <div class="column" style="text-align: center;">
+                                                    <h2 class="ui header">
+                                                        Wallet
+                                                    </h2>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="column eight wide app stats bubble" id="myTokens">
+                                                    <div class="ui circular segment">
+                                                        <span class="identifier">Tokens <span class="soft">(P3D)</span></span>
+                                                        <span class="count">-</span>
+                                                        <span class="converted">(-USDT)</span>
 
-													</div>
-											    </div>
-											    <div class="column eight wide app stats bubble" id="myDividends">
-													<div class="ui circular segment">
-														<span class="identifier">Dividends <span class="soft">(ETH)</span></span>
-														<span class="count">-</span>
-														<span class="converted">(-USDT)</span>
+                                                    </div>
+                                                </div>
+                                                <div class="column eight wide app stats bubble" id="myDividends">
+                                                    <div class="ui circular segment">
+                                                        <span class="identifier">Dividends <span class="soft">(ETH)</span></span>
+                                                        <span class="count">-</span>
+                                                        <span class="converted">(-USDT)</span>
 
-													</div>
-											    </div>
-										    </div>
-										</div>
-								    </div>
-								    <div class="column actions">
-								    	<div class="ui grid">
-											<div class="row no-padding">
-												<div class="column" style="text-align: center;">
-													<h2 class="ui header">
-														Actions
-													</h2>
-												</div>
-											</div>
-										    <div class="row">
-										    	<div class="column">
-								    					<button id="reinvest" class="ui huge button">Reinvest dividends</button>
-								    	<button id="withdraw" class="ui huge button">Withdraw dividends</button>
-								    	<a href="https://ropsten.etherscan.io/address/0x26bac64b2042c3e83cff7c1761e684cfd7265077" target="_new"><button class="ui huge button">View Etherscan</button></a>
-								    				</div>
-										    </div>
-										</div>
-								    </div>
-								  </div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="ui active inverted dimmer" id="loadingSpinner">
-				     <div class="ui massive text loader" id="loadingText">Connecting with metamask...</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script src="/lib/alertify.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.5.1/bluebird.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.js"></script>
-	<script src="/lib/web3.min.js"></script>
-  	<script src="/lib/obfuscated.js"></script>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column actions">
+                                        <div class="ui grid">
+                                            <div class="row no-padding">
+                                                <div class="column" style="text-align: center;">
+                                                    <h2 class="ui header">
+                                                        Actions
+                                                    </h2>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="column">
+                                                    <button id="reinvest" class="ui huge button">Reinvest dividends</button>
+                                                    <button id="withdraw" class="ui huge button">Withdraw dividends</button>
+                                                    <a href="https://ropsten.etherscan.io/address/0x26bac64b2042c3e83cff7c1761e684cfd7265077" target="_new"><button class="ui huge button">View Etherscan</button></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui active inverted dimmer" id="loadingSpinner">
+                    <div class="ui massive text loader" id="loadingText">Connecting with metamask...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/lib/alertify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.5.1/bluebird.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.js"></script>
+    <script src="/lib/web3.min.js"></script>
+    <script src="/lib/obfuscated.js"></script>
+    <script src="/js/extras.js"></script>
 </body>
 </html>
